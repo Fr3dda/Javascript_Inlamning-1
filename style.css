@@ -1,5 +1,121 @@
-#lastName-error,
-#firstName-error,
-#email-error{
-    color: red;
+:root{
+--primary-cyan:#086464;
+; 
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+
+  .wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(235, 220, 220);
+  }
+
+#regForm{
+    background-color: rgb(217, 237, 240);
+    padding: 1rem;
+    border-radius: .5rem;
+    max-width: 400px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.486);
+}
+
+.form-content {
+    padding: 1.5rem;
+  }
+
+  
+.headline{
+    color: var(--primary-cyan);
+    border-bottom: 1px solid var(--primary-cyan);
+    text-align: center;
+    
+}
+
+
+.input-group .input-label,
+.input-group .form-control,
+.input-group .invalid-input {
+    display: block;
+    width: 100%;
+    
+}
+
+.input-label{
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+}
+
+.is-invalid .form-control {
+    border: 1px solid red;
+    outline: 1px solid red;
+  }
+  .is-valid .form-control {
+    border: 1px solid green;
+    outline: 1px solid green;
+  }
+
+
+
+.input-group .invalid-input,
+.input-group-check .invalid-input {
+  margin-top: .2rem;
+  color: red;
+  font-size: .9rem;
+  visibility: hidden;
+}
+
+  .is-invalid .invalid-input {
+
+    display: block;
+    visibility: visible;
+  }
+
+.input-group-check{
+    margin-top: .5rem;
+}
+
+/* Button */
+
+.btn{
+    text-transform: uppercase;
+    border: 1px solid black;
+    margin-top: 1rem;
+}
+
+.btn-block{
+    width: 100%;
+}
+
+    
+
+/* FORM */
+
+
+
+ul li{
+list-style: none;
+border-bottom: 1px solid rgba(2, 2, 2, 0.062);
+}
+
+
+.nameText{
+  font-weight: bold;
+  color: var(--primary-cyan);
+
+}
+.emailText{
+  font-style: italic;
 }

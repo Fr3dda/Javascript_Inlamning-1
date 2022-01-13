@@ -11,44 +11,54 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1 class="text-center my-3">Forms</h1>
-        <form id="regForm">
-          <div class="row">
-    
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" id="firstName" placeholder="First name">
-              <div id="firstName-error"></div>
-            </div>
-    
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" id="lastName" placeholder="Last name">
-              <div id="lastName-error"></div>
-            </div>
-    
-          </div>
-          <div class="row">
-            <div class="md-6 mb-3">
-              <input type="text" class="form-control" id="address" placeholder="E-mail">
-              <div id="email-error"></div>
-            </div>
-   
-    
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="tac">
-                <label class="form-check-label" for="tac">I accept the user terms and conditions.</label>
-              </div>
-            </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="btn btn-info me-md-4">Register</button>
-            </div>
-          </div>
-    
-    
-        </form>
+<div class="wrapper">
+  <form id="regForm">
+    <div class="headline">
+      <h1>Register user</h1>
+    </div>
+    <div class="form-content">
+
+      <div class="input-group">
+        <label for="firstName" class="input-label">First Name:</label>
+        <input type="text" id="firstName" class="form-control">
+        <div class="invalid-input">Error msg</div>
       </div>
+
+      <div class="input-group">
+
+        <label for="lastName" class="input-label">Last Name:</label>
+        <input type="text" id="lastName" class="form-control">
+        <div class="invalid-input">Error msg</div>
+      </div>
+
+      <div class="input-group">
+        <label for="email" class="input-label">Email:</label>
+        <input type="email" id="email" class="form-control">
+        <div class="invalid-input">Error msg</div>
+      </div>
+      <div class="input-group-check">
+        <input type="checkbox" id="tac">
+        <label for="tac">Accept terms and conditions</label>
+        <div class="invalid-input">Error msg</div>
+      </div>
+
+      <div>
+        <button class="btn btn-block btn-info"> Register</button>
+      </div>
+</div>
+  </form>
+
+  <div class="container2">
+    <div id="users" class=" py-5"></div>
+
+  </div>
+<!--   <ul id="data">
+    <li class="nameText">Fredrik</li>
+    <li class="nameText">Lundkvist</li>
+    <li class="emailText"> Fredrik.1994.lundkvist@gmail.com</li>
+  </ul> -->
+  
+</div>
 
 
 
