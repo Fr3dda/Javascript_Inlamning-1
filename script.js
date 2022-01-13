@@ -1,20 +1,4 @@
-let todos = [
-  {
-    id: 'asd',
-    title: 'Todo One',
-    completed: false
-  },
-  {
-    id: '2',
-    title: 'Todo Two',
-    completed: false
-  },
-  {
-    id: '3',
-    title: 'Todo Three',
-    completed: false
-  }
-]
+
 
 
 
@@ -97,19 +81,7 @@ const validate = input => {
 
 //      SUBMIT
 
-const listUsers = () => {
-  output.innerHTML = '';
-  todos.forEach(user => {
-    output.innerHTML += `
-      <div id="${user.id}" class="d-flex justify-content-between align-items-center border bg-white p-2 mb-2">
-        <p class="m-0 h4">${user.title}</p>
-        <button type="button" class="btn btn-danger btn-sm">X</button>
-      </div>
-    `;
 
-  })
-
-}
 
 
 form.addEventListener('submit', e => {
@@ -141,11 +113,5 @@ e.preventDefault();
   
 })
 
-  output.addEventListener('click', e => {
-    // console.log(e.target.parentNode.id)
-    if(e.target.type === 'button') {
-      users = users.filter(user => user.id !== e.target.parentNode.id);
-      listUsers();
-    }
-})
+
 
