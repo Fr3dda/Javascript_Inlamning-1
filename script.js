@@ -1,19 +1,14 @@
 
-
-
-
-
-
-
-
-
 const form = document.querySelector('#regForm');
 const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
 const tac = document.querySelector('#tac');
-
 const output = document.querySelector('#users');
+/* const input = document.querySelector(#) */
+
+
+const users = [];
 
 //          VALIDATE
 
@@ -81,6 +76,33 @@ const validate = input => {
 
 //      SUBMIT
 
+const listUsers = () => {
+  output.innerHTML = '';
+  users.forEach(user => {
+    output.innerHTML += `
+    <div>
+    <ul id="${users}">
+      <li class="nameOutput">${user.firstName} ${user.lastName}</li>
+      <li class="emailOutput">${user.email}</li>
+    </ul>
+    
+  </div>
+    `;
+    
+  })
+
+  // const buttons = document.querySelectorAll('.btn-danger');
+  // buttons.forEach(button => {
+  //   button.addEventListener('click', () => {
+  //     console.log(button.id)
+  //     todos = todos.filter(todo => todo.id !== button.id);
+  //     listTodos();
+  //   })
+  // })
+}
+
+
+
 
 
 
@@ -102,16 +124,29 @@ e.preventDefault();
   console.log(errors)
 
   if(!errors.includes(false)) {
-    const user = {
+    user = {
       id: Date.now().toString(),
       firstName : firstName.value,
       lastName : lastName.value,
       email : email.value,
     }
-    console.log(user);
+    users.push(user);
+    firstName.value = '';
+    lastName.value = '';
+    email.value = '';
+    firstName.classList.remove('is-valid');
+    listUsers();
   }
+  
+
   
 })
 
 
+output.addEventListener('click', e => {
+  if(e.target.type === 'button') {
+    users = users.filter(user => user.id !== e.target.parentNode.id);
+    listUsers();
+  }
+})
 
