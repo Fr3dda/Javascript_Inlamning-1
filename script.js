@@ -124,7 +124,7 @@ e.preventDefault();
   console.log(errors)
 
   if(!errors.includes(false)) {
-    user = {
+    const user = {
       id: Date.now().toString(),
       firstName : firstName.value,
       lastName : lastName.value,
@@ -136,6 +136,7 @@ e.preventDefault();
     email.value = '';
     firstName.classList.remove('is-valid');
     listUsers();
+
   }
   
 
