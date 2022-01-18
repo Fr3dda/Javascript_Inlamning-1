@@ -30,11 +30,11 @@ const validateText = (input) => {
     let regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   
     if(email.value.trim() === '') {
-      setError(email, 'You need to enter a email address');
+      setError(email, 'You need to enter a email address')
       return false;
     } 
     else if(!regEx.test(email.value)) {
-      setError(email, 'Email address is not valid');
+      setError(email, 'Email address is not valid')
       return false;
     }
     else {
@@ -48,21 +48,21 @@ const validateText = (input) => {
       return false;
     }
     else {
-      setSuccess(checkbox)
+      setSuccess(checkbox);
       return true;
     }
   }
   //    ERROR & SUCCESS
 const setError = (input, textMessage) => {
   const parent = input.parentElement;
-  parent.classList.add('is-invalid');
-  parent.classList.remove('is-valid');
+  input.classList.add('is-invalid');
+  input.classList.remove('is-valid');
   parent.querySelector('.invalid-input').innerText = textMessage;
 }
 const setSuccess = input => {
   const parent = input.parentElement;
-  parent.classList.remove('is-invalid');
-  parent.classList.add('is-valid');
+  input.classList.remove('is-invalid');
+  input.classList.add('is-valid');
 }
 const validate = input => {
   switch(input.type) {
@@ -91,14 +91,6 @@ const listUsers = () => {
     
   })
 
-  // const buttons = document.querySelectorAll('.btn-danger');
-  // buttons.forEach(button => {
-  //   button.addEventListener('click', () => {
-  //     console.log(button.id)
-  //     todos = todos.filter(todo => todo.id !== button.id);
-  //     listTodos();
-  //   })
-  // })
 }
 
 
@@ -109,10 +101,10 @@ const listUsers = () => {
 form.addEventListener('submit', e => {
 e.preventDefault();
 
-  validateText(firstName);
+/*   validateText(firstName);
   validateText(lastName);
   validateText(email);
-  validateText(tac);
+  validateText(tac); */
 
 
 
@@ -128,13 +120,17 @@ e.preventDefault();
       id: Date.now().toString(),
       firstName : firstName.value,
       lastName : lastName.value,
-      email : email.value,
+      email : email.value
     }
+    console.log(users)
     users.push(user);
     firstName.value = '';
     lastName.value = '';
     email.value = '';
     firstName.classList.remove('is-valid');
+    lastName.classList.remove('is-valid');
+    email.classList.remove('is-valid');
+
     listUsers();
 
   }
