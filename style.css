@@ -59,12 +59,15 @@
     font-weight: 400;
 
 }
-
+.form-control{
+  border: none;
+  outline: none;
+}
 .is-invalid .form-control {
     border: 1px solid red;
     outline: 1px solid red;
   }
-  .is-valid /* .form-control */ {
+  .is-valid  .form-control {
     border: 1px solid green;
     outline: 1px solid green;
   }
@@ -76,13 +79,13 @@
   margin-top: .2rem;
   color: red;
   font-size: .9rem;
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden !important; */
 }
 
   .is-invalid .invalid-input {
-
     display: block;
-    visibility: visible;
+    /* visibility: visible !important; */
   }
 
 .input-group-check{

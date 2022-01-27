@@ -30,15 +30,15 @@ const validateText = (input) => {
     let regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   
     if(email.value.trim() === '') {
-      setError(email, 'You need to enter a email address')
+      setError(email, 'You need to enter a email address');
       return false;
     } 
     else if(!regEx.test(email.value)) {
-      setError(email, 'Email address is not valid')
+      setError(email, 'Email address is not valid');
       return false;
     }
     else {
-      setSuccess(email)
+      setSuccess(email);
       return true;
     }
   }
@@ -48,27 +48,28 @@ const validateText = (input) => {
       return false;
     }
     else {
-      setSuccess(checkbox);
+      setSuccess(checkbox)
       return true;
     }
   }
   //    ERROR & SUCCESS
-const setError = (input, textMessage) => {
-  const parent = input.parentElement;
-  input.classList.add('is-invalid');
-  input.classList.remove('is-valid');
-  parent.querySelector('.invalid-input').innerText = textMessage;
-}
-const setSuccess = input => {
-  const parent = input.parentElement;
-  input.classList.remove('is-invalid');
-  input.classList.add('is-valid');
-}
+  const setError = (input, textMessage) => {
+    const parent = input.parentElement;
+    parent.classList.add('is-invalid');
+    parent.classList.remove('is-valid');
+    parent.querySelector('.invalid-input').innerText = textMessage;
+  }
+  const setSuccess = input => {
+    const parent = input.parentElement;
+    parent.classList.remove('is-invalid');
+    parent.classList.add('is-valid');
+
+  }
 const validate = input => {
   switch(input.type) {
-    case 'text': return validateText(input)
-    case 'email': return validateEmail(input)
-    case 'checkbox': return validateCheck(input)
+    case 'text': return validateText(input);
+    case 'email': return validateEmail(input);
+    case 'checkbox': return validateCheck(input);
     default:
       break;
   }
@@ -122,14 +123,15 @@ e.preventDefault();
       lastName : lastName.value,
       email : email.value
     }
-    console.log(users)
+    console.log(users);
     users.push(user);
+    firstName.classList.remove('is-valid');
+    lastName.classList.remove('.is-valid');
+    email.classList.remove('.is-valid');
     firstName.value = '';
     lastName.value = '';
     email.value = '';
-    firstName.classList.remove('is-valid');
-    lastName.classList.remove('is-valid');
-    email.classList.remove('is-valid');
+
 
     listUsers();
 
